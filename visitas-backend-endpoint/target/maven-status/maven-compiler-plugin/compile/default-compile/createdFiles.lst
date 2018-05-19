@@ -1,0 +1,3 @@
+com\amspace\visitas\endpoint\Application.class
+com\amspace\visitas\endpoint\controller\LoginController.class
+com\amspace\visitas\endpoint\config\VisitasConfig.class

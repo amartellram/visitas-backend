@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+    jpa:
+        database: MYSQL
+        #hibernate:
+          #ddl-auto: update
+    datasource:
+        url: jdbc:mysql://localhost:3306/visitas?useSSL=false
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG 
+      hibernate: ERROR
