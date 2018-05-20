@@ -1,3 +1,8 @@
 com\amspace\visitas\endpoint\Application.class
+com\amspace\visitas\endpoint\config\AdditionalWebConfig.class
+com\amspace\visitas\endpoint\config\AuthorizationServerConfig.class
+com\amspace\visitas\endpoint\controller\ResourceController.class
+com\amspace\visitas\endpoint\config\ResourceServerConfig.class
 com\amspace\visitas\endpoint\controller\LoginController.class
-com\amspace\visitas\endpoint\config\VisitasConfig.class
+com\amspace\visitas\endpoint\config\DatasourceConfig.class
+com\amspace\visitas\endpoint\config\SecurityConfig.class
