@@ -7,84 +7,85 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "app_user")
+@Table(name = "usuario")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id_usuario")
     private Long id;
+    
+    @Column(name = "id_persona")
+    private Long idPerson;
+    
 
-    @Column(name = "username")
+    @Column(name = "usuario")
     private String username;
 
-    @Column(name = "password")
+    @Column(name = "clave")
     @JsonIgnore
     private String password;
 
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "estado_registro")
+    private Integer estado;
 
     /**
      * Roles are being eagerly loaded here because
      * they are a fairly small collection of items for this example.
      */
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "user_role", joinColumns
-            = @JoinColumn(name = "user_id",
-            referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id",
-                    referencedColumnName = "id"))
+    @JoinTable(name = "usuario_rol", joinColumns
+            = @JoinColumn(name = "id_usuario",
+            referencedColumnName = "id_usuario"),
+            inverseJoinColumns = @JoinColumn(name = "id_rol",
+                    referencedColumnName = "id_rol"))
     private List<Role> roles;
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public Long getIdPerson() {
+		return idPerson;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public void setIdPerson(Long idPerson) {
+		this.idPerson = idPerson;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public String getLastName() {
-        return lastName;
-    }
+	public Integer getEstado() {
+		return estado;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public void setEstado(Integer estado) {
+		this.estado = estado;
+	}
 
-    public List<Role> getRoles() {
-        return roles;
-    }
+	public List<Role> getRoles() {
+		return roles;
+	}
 
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
-    }
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
 }
 

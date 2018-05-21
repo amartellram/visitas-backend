@@ -2,7 +2,7 @@ package com.amspace.visitas.service;
 
 import java.util.List;
 
-import com.amspace.visitas.domain.RandomCity;
+import com.amspace.visitas.domain.Company;
 import com.amspace.visitas.domain.User;
 
 public interface GenericService {
@@ -10,5 +10,5 @@ public interface GenericService {
 
     List<User> findAllUsers();
 
-    List<RandomCity> findAllRandomCities();
+    List<Company> findAllCompanies();
 }

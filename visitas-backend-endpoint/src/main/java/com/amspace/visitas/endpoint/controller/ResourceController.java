@@ -8,22 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.amspace.visitas.domain.RandomCity;
+import com.amspace.visitas.domain.Company;
 import com.amspace.visitas.domain.User;
 import com.amspace.visitas.service.GenericService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/springjwt")
+@RequestMapping("/resources")
 public class ResourceController {
     @Autowired
     private GenericService userService;
 
-    @RequestMapping(value ="/cities")
+    @RequestMapping(value ="/companies")
     @PreAuthorize("hasAuthority('ADMIN_USER') or hasAuthority('STANDARD_USER')")
-    public List<RandomCity> getUser(){
-        return userService.findAllRandomCities();
+    public List<Company> getUser(){
+        return userService.findAllCompanies();
     }
 
     @RequestMapping(value ="/users", method = RequestMethod.GET)

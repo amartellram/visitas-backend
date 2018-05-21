@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.amspace.visitas.domain.RandomCity;
+import com.amspace.visitas.domain.Company;
 import com.amspace.visitas.domain.User;
-import com.amspace.visitas.repository.RandomCityRepository;
+import com.amspace.visitas.repository.CompanyRepository;
 import com.amspace.visitas.repository.UserRepository;
 import com.amspace.visitas.service.GenericService;
 
@@ -17,7 +17,7 @@ public class GenericServiceImpl implements GenericService {
     private UserRepository userRepository;
 
     @Autowired
-    private RandomCityRepository randomCityRepository;
+    private CompanyRepository companyRepository;
 
     @Override
     public User findByUsername(String username) {
@@ -30,7 +30,7 @@ public class GenericServiceImpl implements GenericService {
     }
 
     @Override
-    public List<RandomCity> findAllRandomCities() {
-        return (List<RandomCity>)randomCityRepository.findAll();
+    public List<Company> findAllCompanies() {
+        return (List<Company>)companyRepository.findAll();
     }
 }

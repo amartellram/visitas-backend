@@ -21,9 +21,6 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 @Configuration
 @EnableWebSecurity
-@ComponentScan(basePackages={	
-		"com.amspace.visitas.service",
-		"com.amspace.visitas.endpoint"})
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Value("${security.signing-key}")
@@ -82,8 +79,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
 		defaultTokenServices.setTokenStore(tokenStore());
 		defaultTokenServices.setSupportRefreshToken(true);
-		defaultTokenServices.setAccessTokenValiditySeconds(30);
-		defaultTokenServices.setRefreshTokenValiditySeconds(30);
 		return defaultTokenServices;
 	}
 

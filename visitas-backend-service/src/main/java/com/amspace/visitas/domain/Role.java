@@ -3,41 +3,48 @@ package com.amspace.visitas.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name="app_role")
+@Table(name="rol")
 public class Role {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_rol")
     private Long id;
 
-    @Column(name="role_name")
-    private String roleName;
+    @Column(name="nombre")
+    private String name;
 
-    @Column(name="description")
+    @Column(name="descripcion")
     private String description;
 
+	public Long getId() {
+		return id;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getRoleName() {
-        return roleName;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+    
 }
